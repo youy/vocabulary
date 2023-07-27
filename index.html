@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おためし田都英単語</title>
+    <!-- Include Bootstrap CSS for responsive design -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hidden-word {
+            cursor: pointer;
+            color: #eeeeee;
+            background-color: #eeeeee;
+            transition: color 0.5s ease;
+			font-weight: bold;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h2>おためし田都英単語</h2>
+        <p class="my-4">
+            We will <span class="hidden-word">celebrate</span> the 40th anniversary of the opening of Chuorinkan Station next year.
+            <br>
+            私たちは来年、中央林間駅開業40周年を<span class="highlight">祝う</span>。
+        </p>
+        <p>
+            <span class="hidden-word">Nobody</span> is on car 10 bound for Chuorinkan.
+            <br>
+            中央林間行きの10号車には<span class="highlight">誰も</span>乗ってい<span class="highlight">ない</span>。
+        </p>
+    </div>
+
+    <script>
+        // Listen to all click events on the document
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+
+            // If the clicked element doesn't have the right selector, bail
+            if (!target.matches('.hidden-word')) return;
+
+            // Don't follow the link
+            event.preventDefault();
+
+            // Change the color to black
+            target.style.color = 'black';
+
+        }, false);
+    </script>
+</body>
+
+</html>
